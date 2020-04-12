@@ -19,12 +19,32 @@ To run stuff in here, confirm you have the following installed:
 2. Run `make register_domain` to setup a testing domain named `"eg-cadence-jobportal"`
 3. Run `make deps` to pull in all dependencies
 
-# Services
+# Workflows
 
 ## `helloworld`
 
-An example service that interacts with the Cadence workflow service.
+> Note: this was done mainly for practice to get a POC workflow up
 
-To run this service in worker mode (runs as a long-running service that handles workflow requests), run `go ./services/helloworld -m worker`
+A POC workflow that interacts with the Cadence workflow service.
 
-To run this service in trigger mode (triggers the workflow), run `go ./services/helloworld -m trigger`
+To run this service in worker mode (runs as a long-running service that handles workflow requests), run `go ./workflows/helloworld -m worker`
+
+To run this service in trigger mode (triggers the workflow), run `go ./workflows/helloworld -m trigger`
+
+## `apply-job`
+
+A job application workflow for a typical jobseeker:
+
+1. Jobseeker is on jobs page
+2. Jobseeker clicks on **Apply for Job**
+3. Jobseeker enters in contact information and clicks **Next**
+4. Jobseeker enters in professional credentials and clicks **Next**
+5. Jobseeker reviews the job application and clicks **Submit**
+6. Jobseeker sees a page indicating job has successfully been applied for
+
+## `accept-applicant`
+
+A 
+
+# Services
+
